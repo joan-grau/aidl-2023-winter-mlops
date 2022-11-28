@@ -27,10 +27,6 @@ def train_model(config):
     return my_model
 
 
-def test_model(...):
-    pass
-
-
 if __name__ == "__main__":
 
     config = {
@@ -38,5 +34,3 @@ if __name__ == "__main__":
         "hyperparam_2": 2,
     }
     train_model(config)
-
-    print(test_model(...))
