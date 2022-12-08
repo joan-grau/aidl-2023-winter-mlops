@@ -1,4 +1,4 @@
-# Session 6
+# Session 5
 Monitoring using Tensorboard and WandB. 
 
 In this session we will solve two very simple tasks: reconstruction and classification
