@@ -3,3 +3,5 @@ numpy
 Pillow
 torch
 ray
+torchvision
+pandas
