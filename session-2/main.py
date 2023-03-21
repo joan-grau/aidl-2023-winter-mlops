@@ -57,7 +57,7 @@ def train_model(config):
     my_dataset = MyDataset("./mnist/samples/", "./mnist/chinese_mnist.csv", transforms.Compose(transform))
 
     train_size, val_size, test_size = 10000, 2500, 2500
-    train_set, val_set, test_set = random_split(my_dataset, [train_size, val_size, test_size])
+    train_set, val_set, test_set = random_split(my_dataset, [train_size, val_size, test_size]) # Improve getting balanced samples for each character
     
     train_loader = DataLoader(train_set, batch_size=config["batch_size"],shuffle=True)
     val_loader = DataLoader(val_set, batch_size=config["batch_size"])
@@ -78,14 +78,15 @@ def train_model(config):
         
         if val_acc > best_val_acc:
             best_val_acc = val_acc
-            save_model(my_model, "./models/best_model.pt")
+            model_scripted = torch.jit.script(my_model) # Export to TorchScript
+            model_scripted.save("./models/best_model.pt") # Save
 
-    my_model = torch.load("./models/best_model.pt")
+    best_model = torch.jit.load("./models/best_model.pt")
 
-    test_loss, test_acc = eval_single_epoch(my_model, test_loader, criterion)
+    test_loss, test_acc = eval_single_epoch(best_model, test_loader, criterion)
     print(f"Test loss: {test_loss:.4f}, Test accuracy: {test_acc:.4f}")
 
-    return my_model
+    return best_model
 
 
 if __name__ == "__main__":
