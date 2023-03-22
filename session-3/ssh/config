@@ -1,0 +1,4 @@
+Host 34.67.121.84
+  HostName 34.67.121.84
+  IdentityFile ./.ssh/aidl2022
+  User joanpascualgrau
