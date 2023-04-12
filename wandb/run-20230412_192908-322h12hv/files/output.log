@@ -1,0 +1,7 @@
+
+Epoch [0 / 5] average classification error: 0.6560999035835267
+Epoch [1 / 5] average classification error: 0.2017395304515958
+Epoch [2 / 5] average classification error: 0.10509812580421567
+Epoch [3 / 5] average classification error: 0.06714291796088219
+Epoch [4 / 5] average classification error: 0.038467858196236195
+Training took 17.26 seconds

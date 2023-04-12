@@ -4,31 +4,50 @@ import itertools
 import numpy as np
 import torch.nn as nn
 from time import time
+from typing import Tuple
 
 from tensorboard_TODO import TensorboardLogger
 from wandb_TODO import WandbLogger
+from argparse import Namespace
 
 import matplotlib.pyplot as plt
 from sklearn.metrics import confusion_matrix
+from utils import DatasetType, LoggerType
 
-# Initialize device either with CUDA or CPU. For this session it does not
-# matter if you run the training with your CPU.
-device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 criterion = nn.CrossEntropyLoss()
 
-def forward_image(model, data):
+
+def forward_image(
+    model: nn.Module,
+    data: Tuple[torch.Tensor, torch.Tensor],
+) -> Tuple[torch.Tensor, torch.Tensor]:
+    """Forward pass of a batch of images through the model
+
+    Parameters
+    ----------
+    model : nn.Module
+        Model being trained
+    image_batch : torch.Tensor
+        Image batch to forward pass
+
+    """
     images, labels = data
-    images, labels = images.to(device), labels.to(device)
     predictions = model(images)
     return predictions, labels
 
 
-def forward_step(model, loader, set, optimizer):
+def forward_step(
+    model: nn.Module, 
+    loader: torch.utils.data.DataLoader, 
+    dataset_type: DatasetType, 
+    optimizer: torch.optim.Optimizer,
+):
+    """Forward pass of a batch of images through the model"""
     fig = None
     loss_list = []
     acc_list = []
     for i, data in enumerate(loader):
-        if set == 'train':
+        if dataset_type == DatasetType.TRAIN:
             preds, labels = forward_image(model, data)
             loss = criterion(preds, labels.long())
             optimizer.zero_grad()
@@ -48,12 +67,20 @@ def forward_step(model, loader, set, optimizer):
 
 
 
-def run_classification(args, model, optimizer, train_loader, val_loader):
+def run_classification(
+    args: Namespace,
+    model: nn.Module, 
+    optimizer: torch.optim.Optimizer, 
+    train_loader: torch.utils.data.DataLoader, 
+    val_loader: torch.utils.data.DataLoader,
+):
 
-    if args.log_framework == 'tensorboard':
-        logger = TensorboardLogger(args.task, model)
-    else:
+    if args.log_framework.upper() == LoggerType.TENSORBOARD.name:
+        logger = TensorboardLogger(args.task)
+    elif args.log_framework.upper() == LoggerType.WANDB.name:
         logger = WandbLogger(args.task, model)
+    else:
+        raise ValueError(f"Log framework {args.log_framework} not supported")
 
     logger.log_model_graph(model, train_loader)
 
@@ -70,17 +97,17 @@ def run_classification(args, model, optimizer, train_loader, val_loader):
         the classifications get better over time.
         """
         model.eval()
-        val_loss, val_acc, fig = forward_step(model, val_loader, 'val', optimizer)
+        val_loss, val_acc, fig = forward_step(model, val_loader, DatasetType.VALIDATION, optimizer)
         val_loss_avg = np.mean(val_loss)
         val_acc_avg = np.mean(val_acc)
 
         model.train()
-        train_loss, train_acc, _ = forward_step(model, train_loader, 'train', optimizer)
+        train_loss, train_acc, _ = forward_step(model, train_loader, DatasetType.TRAIN, optimizer)
         train_loss_avg = np.mean(train_loss)
         train_acc_avg = np.mean(train_acc)
 
         logger.log_classification_training(
-            model, epoch, train_loss_avg, val_loss_avg, val_acc_avg, train_acc_avg, fig
+            epoch, train_loss_avg, val_loss_avg, train_acc_avg, val_acc_avg, fig
         )
 
         print(
@@ -89,19 +116,18 @@ def run_classification(args, model, optimizer, train_loader, val_loader):
     print(f"Training took {round(time() - ini, 2)} seconds")
 
 
-def compute_accuracy(preds, labels):
+def compute_accuracy(preds: torch.Tensor, labels: torch.Tensor) -> float:
     pred_labels = preds.argmax(dim=1, keepdim=True)
     acc = pred_labels.eq(labels.view_as(pred_labels)).sum().item() / len(
         pred_labels)
     return acc
 
 
-def log_confusion_matrix(preds, labels):
+def log_confusion_matrix(preds: torch.Tensor, labels: torch.Tensor) -> plt.Figure:
     predictions = preds.argmax(dim=1, keepdim=True)
 
     cm = confusion_matrix(labels.cpu(), predictions.cpu())
-    cm = np.around(cm.astype('float') / cm.sum(axis=1)[:, np.newaxis],
-                   decimals=2)
+    cm = np.around(cm.astype('float') / cm.sum(axis=1)[:, np.newaxis], decimals=2)
 
     fig = plt.figure(figsize=(8, 8))
     plt.imshow(cm, interpolation='none', cmap=plt.cm.Blues)

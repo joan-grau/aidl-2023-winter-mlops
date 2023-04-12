@@ -1,0 +1,1 @@
+{"graph_0": {"_type": "graph-file", "sha256": "3291ad54d9ea6472e2fd076a68a2038d3afec297ff596a49ed4f318c54a84f1d", "size": 1176, "path": "media/graph/graph_0_summary_3291ad54d9ea6472e2fd.graph.json"}, "train reconstruction loss": 0.6712157130241394, "_timestamp": 1681326448, "_runtime": 12, "validation reconstruction loss": 0.988406166434288, "_step": 0, "_wandb": {"runtime": 12}}

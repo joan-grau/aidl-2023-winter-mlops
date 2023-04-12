@@ -1,0 +1,8 @@
+
+[34m[1mwandb[39m[22m: logging graph, to disable use `wandb.watch(log_graph=False)`
+Epoch [0 / 5] average reconstruction error: 0.6712157130241394
+Epoch [1 / 5] average reconstruction error: 0.44526721760630605
+Epoch [2 / 5] average reconstruction error: 0.3888922303915024
+Epoch [3 / 5] average reconstruction error: 0.36709417775273323
+Epoch [4 / 5] average reconstruction error: 0.3561323419213295
+Training took 35.96 seconds

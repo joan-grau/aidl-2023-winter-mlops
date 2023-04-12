@@ -1,68 +1,96 @@
 import os
 import torch
-from datetime import datetime
+import torch.nn as nn
+import numpy as np
+import matplotlib.pyplot as plt
 
+from datetime import datetime
+from typing import Optional
 from Logger import Logger
+from utils import TaskType
 from torch.utils.tensorboard import SummaryWriter
+
 
 class TensorboardLogger(Logger):
 
-    def __init__(self, task, model):
+    def __init__(
+        self, 
+        task: TaskType, 
+    ):
         # Define the folder where we will store all the tensorboard logs
         logdir = os.path.join("logs", f"{task}-{datetime.now().strftime('%Y%m%d-%H%M%S')}")
 
         # TODO: Initialize Tensorboard Writer with the previous folder 'logdir'
+        self.writter = SummaryWriter(log_dir=logdir)
 
-
-    def log_reconstruction_training(self, model, epoch, train_loss_avg, val_loss_avg, reconstruction_grid):
+    def log_reconstruction_training(
+        self, 
+        model: nn.Module, 
+        epoch: int, 
+        train_loss_avg: np.ndarray,
+        val_loss_avg: np.ndarray,
+        reconstruction_grid: Optional[torch.Tensor] = None,
+    ):
 
         # TODO: Log train reconstruction loss to tensorboard.
         #  Tip: use "Reconstruction/train_loss" as tag
-
+        self.writter.add_scalar("Reconstruction/train_loss", train_loss_avg, epoch)   
 
         # TODO: Log validation reconstruction loss to tensorboard.
         #  Tip: use "Reconstruction/val_loss" as tag
-
+        self.writter.add_scalar("Reconstruction/val_loss", val_loss_avg, epoch)  
 
         # TODO: Log a batch of reconstructed images from the validation set.
         #  Use the reconstruction_grid variable returned above.
-
+        self.writter.add_scalar("Reconstruction/val_loss", val_loss_avg, epoch)
 
         # TODO: Log the weights values and grads histograms.
         #  Tip: use f"{name}/value" and f"{name}/grad" as tags
         for name, weight in model.encoder.named_parameters():
-            continue # remove this line when you complete the code
+            self.writter.add_histogram(f"{name}/value", weight, epoch)
+            self.writter.add_histogram(f"{name}/grad", weight.grad, epoch)
 
 
         pass
 
 
 
-    def log_classification_training(self, model, epoch, train_loss_avg,
-                                    val_loss_avg, val_acc_avg, train_acc_avg,
-                                    fig):
+    def log_classification_training(
+        self, 
+        epoch: int,
+        train_loss_avg: np.ndarray,
+        val_loss_avg: np.ndarray,
+        train_acc_avg: np.ndarray,
+        val_acc_avg: np.ndarray,
+        fig: plt.Figure,
+    ):
         # TODO: Log confusion matrix figure to tensorboard
-
+        self.writter.add_figure(tag='ConfusionMatrix/figure',figure=fig)
         # TODO: Log validation loss to tensorboard.
         #  Tip: use "Classification/val_loss" as tag
-
+        self.writter.add_scalar("Classification/val_loss", val_loss_avg, epoch)
 
         # TODO: Log validation accuracy to tensorboard.
         #  Tip: use "Classification/val_acc" as tag
-
+        self.writter.add_scalar("Classification/val_acc", val_acc_avg, epoch)
 
         # TODO: Log training loss to tensorboard.
         #  Tip: use "Classification/train_loss" as tag
+        self.writter.add_scalar("Classification/train_loss", train_loss_avg, epoch)
 
 
         # TODO: Log training accuracy to tensorboard.
         #  Tip: use "Classification/train_acc" as tag
-
+        self.writter.add_scalar("Classification/train_acc", train_acc_avg, epoch)
 
         pass
 
 
-    def log_model_graph(self, model, train_loader):
+    def log_model_graph(
+        self, 
+        model: nn.Module, 
+        train_loader: torch.utils.data.DataLoader,
+    ):
         batch, _ = next(iter(train_loader))
         """
         TODO:
@@ -74,14 +102,18 @@ class TensorboardLogger(Logger):
 
 
 
-    def log_embeddings(self, model, train_loader, device):
+    def log_embeddings(
+        self, 
+        model: nn.Module, 
+        train_loader: torch.utils.data.DataLoader,
+    ):
         list_latent = []
         list_images = []
         for i in range(10):
             batch, _ = next(iter(train_loader))
 
             # forward batch through the encoder
-            list_latent.append(model.encoder(batch.to(device)))
+            list_latent.append(model.encoder(batch))
             list_images.append(batch)
 
         latent = torch.cat(list_latent)

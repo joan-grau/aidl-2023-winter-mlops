@@ -8,10 +8,7 @@ from torchvision import datasets, transforms
 from model import AutoEncoder, Classifier
 from run_reconstruction import run_reconstruction
 from run_classification import run_classification
-
-# Initialize device either with CUDA or CPU. For this session it does not
-# matter if you run the training with your CPU.
-device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+from utils import TaskType
 
 # Fix seed to be able to reproduce experiments
 seed = 0
@@ -47,37 +44,33 @@ mnist_trainset = datasets.MNIST('data', train=True, download=True,
                                     transforms.Normalize((0.1307,), (0.3081,))
                                 ]))
 mnist_valset = datasets.MNIST('data', train=False,
-                               transform=transforms.Compose([
-                                   transforms.ToTensor(),
-                                   transforms.Normalize((0.1307,), (0.3081,))
-                               ]))
+                                transform=transforms.Compose([
+                                    transforms.ToTensor(),
+                                    transforms.Normalize((0.1307,), (0.3081,))
+                                ]))
 
 # We don't need the whole dataset, we will pick a subset
 train_dataset = Subset(mnist_trainset, list(range(args.subset_len)))
 val_dataset = Subset(mnist_valset, list(range(args.subset_len)))
 
 
-train_loader = torch.utils.data.DataLoader(
+train_loader = DataLoader(
     train_dataset,
     batch_size=args.batch_size,
     shuffle=True)
 
-val_loader = torch.utils.data.DataLoader(
+val_loader = DataLoader(
     val_dataset,
     batch_size=args.batch_size,
     shuffle=False)
 
 
-if args.task == 'reconstruction':
+if args.task.upper() == TaskType.RECONSTRUCTION.name:
     model = AutoEncoder(
         args.capacity,
         args.latent_dims
     )
-    optimizer = torch.optim.Adam(params=model.parameters(), lr=args.lr,
-                                 weight_decay=1e-5)
-
-    # Put the model into 'device'
-    model = model.to(device)
+    optimizer = torch.optim.Adam(params=model.parameters(), lr=args.lr, weight_decay=1e-5)
 
     run_reconstruction(
         args,
@@ -86,17 +79,13 @@ if args.task == 'reconstruction':
         train_loader,
         val_loader,
     )
-else:
+elif args.task.upper() == TaskType.CLASSIFICATION.name:
 
     model = Classifier(
         args.capacity,
         args.latent_dims
     )
-    optimizer = torch.optim.Adam(params=model.parameters(), lr=args.lr,
-                                 weight_decay=1e-5)
-
-    # Put the model into 'device'
-    model = model.to(device)
+    optimizer = torch.optim.Adam(params=model.parameters(), lr=args.lr, weight_decay=1e-5)
 
     run_classification(
         args,
@@ -105,3 +94,6 @@ else:
         train_loader,
         val_loader,
     )
+else:
+    raise ValueError("Task NOT valid. The options are either reconstruction or classification")
+    

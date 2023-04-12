@@ -1,0 +1,170 @@
+2023-04-12 21:06:15,335 INFO    MainThread:21360 [internal.py:wandb_internal():90] W&B internal server running at pid: 21360, started at: 2023-04-12 21:06:15.335608
+2023-04-12 21:06:15,337 INFO    WriterThread:21360 [datastore.py:open_for_write():75] open: C:\Users\joanpg5\Documents\aidl-2023-winter-mlops\wandb\run-20230412_210614-3rqvnkaq\run-3rqvnkaq.wandb
+2023-04-12 21:06:15,339 DEBUG   SenderThread:21360 [sender.py:send():232] send: header
+2023-04-12 21:06:15,339 DEBUG   SenderThread:21360 [sender.py:send():232] send: run
+2023-04-12 21:06:15,597 DEBUG   HandlerThread:21360 [handler.py:handle_request():141] handle_request: check_version
+2023-04-12 21:06:15,602 INFO    SenderThread:21360 [dir_watcher.py:__init__():166] watching files in: C:\Users\joanpg5\Documents\aidl-2023-winter-mlops\wandb\run-20230412_210614-3rqvnkaq\files
+2023-04-12 21:06:15,603 INFO    SenderThread:21360 [sender.py:_start_run_threads():811] run started: 3rqvnkaq with start time 1681326374
+2023-04-12 21:06:15,603 DEBUG   SenderThread:21360 [sender.py:send():232] send: summary
+2023-04-12 21:06:15,603 INFO    SenderThread:21360 [sender.py:_save_file():946] saving file wandb-summary.json with policy end
+2023-04-12 21:06:15,603 DEBUG   SenderThread:21360 [sender.py:send_request():246] send_request: check_version
+2023-04-12 21:06:15,687 DEBUG   HandlerThread:21360 [handler.py:handle_request():141] handle_request: run_start
+2023-04-12 21:06:15,723 DEBUG   HandlerThread:21360 [meta.py:__init__():35] meta init
+2023-04-12 21:06:15,724 DEBUG   HandlerThread:21360 [meta.py:__init__():49] meta init done
+2023-04-12 21:06:15,724 DEBUG   HandlerThread:21360 [meta.py:probe():209] probe
+2023-04-12 21:06:15,744 DEBUG   HandlerThread:21360 [meta.py:_setup_git():199] setup git
+2023-04-12 21:06:15,811 DEBUG   HandlerThread:21360 [meta.py:_setup_git():206] setup git done
+2023-04-12 21:06:15,811 DEBUG   HandlerThread:21360 [meta.py:_save_pip():53] save pip
+2023-04-12 21:06:15,812 DEBUG   HandlerThread:21360 [meta.py:_save_pip():67] save pip done
+2023-04-12 21:06:15,812 DEBUG   HandlerThread:21360 [meta.py:_save_conda():74] save conda
+2023-04-12 21:06:16,617 INFO    Thread-11 :21360 [dir_watcher.py:_on_file_created():213] file/dir created: C:\Users\joanpg5\Documents\aidl-2023-winter-mlops\wandb\run-20230412_210614-3rqvnkaq\files\requirements.txt
+2023-04-12 21:06:16,617 INFO    Thread-11 :21360 [dir_watcher.py:_on_file_created():213] file/dir created: C:\Users\joanpg5\Documents\aidl-2023-winter-mlops\wandb\run-20230412_210614-3rqvnkaq\files\conda-environment.yaml
+2023-04-12 21:06:16,617 INFO    Thread-11 :21360 [dir_watcher.py:_on_file_created():213] file/dir created: C:\Users\joanpg5\Documents\aidl-2023-winter-mlops\wandb\run-20230412_210614-3rqvnkaq\files\wandb-summary.json
+2023-04-12 21:06:19,638 INFO    Thread-11 :21360 [dir_watcher.py:_on_file_modified():226] file/dir modified: C:\Users\joanpg5\Documents\aidl-2023-winter-mlops\wandb\run-20230412_210614-3rqvnkaq\files\conda-environment.yaml
+2023-04-12 21:06:19,787 DEBUG   HandlerThread:21360 [meta.py:_save_conda():84] save conda done
+2023-04-12 21:06:19,787 DEBUG   HandlerThread:21360 [meta.py:probe():247] probe done
+2023-04-12 21:06:19,902 DEBUG   SenderThread:21360 [sender.py:send():232] send: files
+2023-04-12 21:06:19,902 INFO    SenderThread:21360 [sender.py:_save_file():946] saving file wandb-metadata.json with policy now
+2023-04-12 21:06:19,904 DEBUG   HandlerThread:21360 [handler.py:handle_request():141] handle_request: stop_status
+2023-04-12 21:06:19,904 DEBUG   SenderThread:21360 [sender.py:send_request():246] send_request: stop_status
+2023-04-12 21:06:20,077 DEBUG   SenderThread:21360 [sender.py:send():232] send: telemetry
+2023-04-12 21:06:20,077 DEBUG   SenderThread:21360 [sender.py:send():232] send: telemetry
+2023-04-12 21:06:20,077 DEBUG   SenderThread:21360 [sender.py:send():232] send: run
+2023-04-12 21:06:20,311 INFO    SenderThread:21360 [sender.py:send_run():707] updated run: 3rqvnkaq
+2023-04-12 21:06:20,311 DEBUG   SenderThread:21360 [sender.py:send():232] send: telemetry
+2023-04-12 21:06:20,311 DEBUG   SenderThread:21360 [sender.py:send():232] send: files
+2023-04-12 21:06:20,312 INFO    SenderThread:21360 [sender.py:_save_file():946] saving file media\graph\graph_0_summary_bfa73b98070a00a1d77c.graph.json with policy now
+2023-04-12 21:06:20,312 DEBUG   SenderThread:21360 [sender.py:send():232] send: summary
+2023-04-12 21:06:20,314 INFO    SenderThread:21360 [sender.py:_save_file():946] saving file wandb-summary.json with policy end
+2023-04-12 21:06:20,496 INFO    Thread-17 :21360 [upload_job.py:push():137] Uploaded file C:\Users\joanpg5\AppData\Local\Temp\tmpmne26h6bwandb\228pvanl-wandb-metadata.json
+2023-04-12 21:06:20,639 INFO    Thread-11 :21360 [dir_watcher.py:_on_file_modified():226] file/dir modified: C:\Users\joanpg5\Documents\aidl-2023-winter-mlops\wandb\run-20230412_210614-3rqvnkaq\files\config.yaml
+2023-04-12 21:06:20,639 INFO    Thread-11 :21360 [dir_watcher.py:_on_file_modified():226] file/dir modified: C:\Users\joanpg5\Documents\aidl-2023-winter-mlops\wandb\run-20230412_210614-3rqvnkaq\files\wandb-summary.json
+2023-04-12 21:06:20,639 INFO    Thread-11 :21360 [dir_watcher.py:_on_file_created():213] file/dir created: C:\Users\joanpg5\Documents\aidl-2023-winter-mlops\wandb\run-20230412_210614-3rqvnkaq\files\media\graph\graph_0_summary_bfa73b98070a00a1d77c.graph.json
+2023-04-12 21:06:20,640 INFO    Thread-11 :21360 [dir_watcher.py:_on_file_created():213] file/dir created: C:\Users\joanpg5\Documents\aidl-2023-winter-mlops\wandb\run-20230412_210614-3rqvnkaq\files\output.log
+2023-04-12 21:06:20,640 INFO    Thread-11 :21360 [dir_watcher.py:_on_file_created():213] file/dir created: C:\Users\joanpg5\Documents\aidl-2023-winter-mlops\wandb\run-20230412_210614-3rqvnkaq\files\wandb-metadata.json
+2023-04-12 21:06:20,640 INFO    Thread-11 :21360 [dir_watcher.py:_on_file_created():213] file/dir created: C:\Users\joanpg5\Documents\aidl-2023-winter-mlops\wandb\run-20230412_210614-3rqvnkaq\files\media
+2023-04-12 21:06:20,640 INFO    Thread-11 :21360 [dir_watcher.py:_on_file_created():213] file/dir created: C:\Users\joanpg5\Documents\aidl-2023-winter-mlops\wandb\run-20230412_210614-3rqvnkaq\files\media\graph
+2023-04-12 21:06:20,874 INFO    Thread-18 :21360 [upload_job.py:push():137] Uploaded file C:\Users\joanpg5\AppData\Local\Temp\tmpmne26h6bwandb\2ucf1dz8-media/graph/graph_0_summary_bfa73b98070a00a1d77c.graph.json
+2023-04-12 21:06:22,653 INFO    Thread-11 :21360 [dir_watcher.py:_on_file_modified():226] file/dir modified: C:\Users\joanpg5\Documents\aidl-2023-winter-mlops\wandb\run-20230412_210614-3rqvnkaq\files\output.log
+2023-04-12 21:06:27,324 DEBUG   HandlerThread:21360 [handler.py:handle_request():141] handle_request: partial_history
+2023-04-12 21:06:27,325 DEBUG   HandlerThread:21360 [handler.py:handle_request():141] handle_request: partial_history
+2023-04-12 21:06:27,343 DEBUG   SenderThread:21360 [sender.py:send():232] send: telemetry
+2023-04-12 21:06:27,934 DEBUG   SenderThread:21360 [sender.py:send():232] send: exit
+2023-04-12 21:06:27,934 DEBUG   HandlerThread:21360 [handler.py:handle_request():141] handle_request: poll_exit
+2023-04-12 21:06:27,934 INFO    SenderThread:21360 [sender.py:send_exit():368] handling exit code: 1
+2023-04-12 21:06:27,935 INFO    SenderThread:21360 [sender.py:send_exit():370] handling runtime: 12
+2023-04-12 21:06:27,935 INFO    SenderThread:21360 [sender.py:_save_file():946] saving file wandb-summary.json with policy end
+2023-04-12 21:06:27,936 INFO    SenderThread:21360 [sender.py:send_exit():376] send defer
+2023-04-12 21:06:27,936 DEBUG   SenderThread:21360 [sender.py:send_request():246] send_request: poll_exit
+2023-04-12 21:06:27,936 DEBUG   HandlerThread:21360 [handler.py:handle_request():141] handle_request: defer
+2023-04-12 21:06:27,936 INFO    HandlerThread:21360 [handler.py:handle_request_defer():164] handle defer: 0
+2023-04-12 21:06:27,937 DEBUG   SenderThread:21360 [sender.py:send_request():246] send_request: defer
+2023-04-12 21:06:27,937 INFO    SenderThread:21360 [sender.py:send_request_defer():385] handle sender defer: 0
+2023-04-12 21:06:27,937 INFO    SenderThread:21360 [sender.py:transition_state():389] send defer: 1
+2023-04-12 21:06:27,937 DEBUG   HandlerThread:21360 [handler.py:handle_request():141] handle_request: defer
+2023-04-12 21:06:27,937 INFO    HandlerThread:21360 [handler.py:handle_request_defer():164] handle defer: 1
+2023-04-12 21:06:28,026 DEBUG   SenderThread:21360 [sender.py:send_request():246] send_request: defer
+2023-04-12 21:06:28,027 INFO    SenderThread:21360 [sender.py:send_request_defer():385] handle sender defer: 1
+2023-04-12 21:06:28,027 INFO    SenderThread:21360 [sender.py:transition_state():389] send defer: 2
+2023-04-12 21:06:28,027 DEBUG   SenderThread:21360 [sender.py:send():232] send: stats
+2023-04-12 21:06:28,027 DEBUG   HandlerThread:21360 [handler.py:handle_request():141] handle_request: defer
+2023-04-12 21:06:28,027 INFO    HandlerThread:21360 [handler.py:handle_request_defer():164] handle defer: 2
+2023-04-12 21:06:28,028 DEBUG   SenderThread:21360 [sender.py:send():232] send: history
+2023-04-12 21:06:28,028 DEBUG   SenderThread:21360 [sender.py:send():232] send: summary
+2023-04-12 21:06:28,029 INFO    SenderThread:21360 [sender.py:_save_file():946] saving file wandb-summary.json with policy end
+2023-04-12 21:06:28,029 DEBUG   SenderThread:21360 [sender.py:send_request():246] send_request: defer
+2023-04-12 21:06:28,029 INFO    SenderThread:21360 [sender.py:send_request_defer():385] handle sender defer: 2
+2023-04-12 21:06:28,029 INFO    SenderThread:21360 [sender.py:transition_state():389] send defer: 3
+2023-04-12 21:06:28,029 DEBUG   HandlerThread:21360 [handler.py:handle_request():141] handle_request: defer
+2023-04-12 21:06:28,029 INFO    HandlerThread:21360 [handler.py:handle_request_defer():164] handle defer: 3
+2023-04-12 21:06:28,029 DEBUG   SenderThread:21360 [sender.py:send_request():246] send_request: defer
+2023-04-12 21:06:28,030 INFO    SenderThread:21360 [sender.py:send_request_defer():385] handle sender defer: 3
+2023-04-12 21:06:28,030 INFO    SenderThread:21360 [sender.py:transition_state():389] send defer: 4
+2023-04-12 21:06:28,030 DEBUG   HandlerThread:21360 [handler.py:handle_request():141] handle_request: defer
+2023-04-12 21:06:28,030 INFO    HandlerThread:21360 [handler.py:handle_request_defer():164] handle defer: 4
+2023-04-12 21:06:28,030 DEBUG   SenderThread:21360 [sender.py:send():232] send: summary
+2023-04-12 21:06:28,031 INFO    SenderThread:21360 [sender.py:_save_file():946] saving file wandb-summary.json with policy end
+2023-04-12 21:06:28,031 DEBUG   SenderThread:21360 [sender.py:send_request():246] send_request: defer
+2023-04-12 21:06:28,031 INFO    SenderThread:21360 [sender.py:send_request_defer():385] handle sender defer: 4
+2023-04-12 21:06:28,031 INFO    SenderThread:21360 [sender.py:transition_state():389] send defer: 5
+2023-04-12 21:06:28,031 DEBUG   HandlerThread:21360 [handler.py:handle_request():141] handle_request: defer
+2023-04-12 21:06:28,031 INFO    HandlerThread:21360 [handler.py:handle_request_defer():164] handle defer: 5
+2023-04-12 21:06:28,031 DEBUG   SenderThread:21360 [sender.py:send_request():246] send_request: defer
+2023-04-12 21:06:28,031 INFO    SenderThread:21360 [sender.py:send_request_defer():385] handle sender defer: 5
+2023-04-12 21:06:28,051 DEBUG   HandlerThread:21360 [handler.py:handle_request():141] handle_request: poll_exit
+2023-04-12 21:06:28,224 INFO    SenderThread:21360 [sender.py:transition_state():389] send defer: 6
+2023-04-12 21:06:28,224 DEBUG   SenderThread:21360 [sender.py:send_request():246] send_request: poll_exit
+2023-04-12 21:06:28,224 DEBUG   HandlerThread:21360 [handler.py:handle_request():141] handle_request: defer
+2023-04-12 21:06:28,224 INFO    HandlerThread:21360 [handler.py:handle_request_defer():164] handle defer: 6
+2023-04-12 21:06:28,224 DEBUG   SenderThread:21360 [sender.py:send_request():246] send_request: defer
+2023-04-12 21:06:28,224 INFO    SenderThread:21360 [sender.py:send_request_defer():385] handle sender defer: 6
+2023-04-12 21:06:28,225 INFO    SenderThread:21360 [dir_watcher.py:finish():279] shutting down directory watcher
+2023-04-12 21:06:28,335 DEBUG   HandlerThread:21360 [handler.py:handle_request():141] handle_request: poll_exit
+2023-04-12 21:06:28,697 INFO    SenderThread:21360 [dir_watcher.py:_on_file_modified():226] file/dir modified: C:\Users\joanpg5\Documents\aidl-2023-winter-mlops\wandb\run-20230412_210614-3rqvnkaq\files\config.yaml
+2023-04-12 21:06:28,698 INFO    SenderThread:21360 [dir_watcher.py:_on_file_modified():226] file/dir modified: C:\Users\joanpg5\Documents\aidl-2023-winter-mlops\wandb\run-20230412_210614-3rqvnkaq\files\output.log
+2023-04-12 21:06:28,698 INFO    SenderThread:21360 [dir_watcher.py:_on_file_modified():226] file/dir modified: C:\Users\joanpg5\Documents\aidl-2023-winter-mlops\wandb\run-20230412_210614-3rqvnkaq\files\wandb-summary.json
+2023-04-12 21:06:28,699 INFO    SenderThread:21360 [dir_watcher.py:finish():309] scan: C:\Users\joanpg5\Documents\aidl-2023-winter-mlops\wandb\run-20230412_210614-3rqvnkaq\files
+2023-04-12 21:06:28,699 INFO    SenderThread:21360 [dir_watcher.py:finish():323] scan save: C:\Users\joanpg5\Documents\aidl-2023-winter-mlops\wandb\run-20230412_210614-3rqvnkaq\files\conda-environment.yaml conda-environment.yaml
+2023-04-12 21:06:28,699 INFO    SenderThread:21360 [dir_watcher.py:finish():323] scan save: C:\Users\joanpg5\Documents\aidl-2023-winter-mlops\wandb\run-20230412_210614-3rqvnkaq\files\config.yaml config.yaml
+2023-04-12 21:06:28,699 INFO    SenderThread:21360 [dir_watcher.py:finish():323] scan save: C:\Users\joanpg5\Documents\aidl-2023-winter-mlops\wandb\run-20230412_210614-3rqvnkaq\files\output.log output.log
+2023-04-12 21:06:28,705 INFO    SenderThread:21360 [dir_watcher.py:finish():323] scan save: C:\Users\joanpg5\Documents\aidl-2023-winter-mlops\wandb\run-20230412_210614-3rqvnkaq\files\requirements.txt requirements.txt
+2023-04-12 21:06:28,706 INFO    SenderThread:21360 [dir_watcher.py:finish():323] scan save: C:\Users\joanpg5\Documents\aidl-2023-winter-mlops\wandb\run-20230412_210614-3rqvnkaq\files\wandb-metadata.json wandb-metadata.json
+2023-04-12 21:06:28,706 INFO    SenderThread:21360 [dir_watcher.py:finish():323] scan save: C:\Users\joanpg5\Documents\aidl-2023-winter-mlops\wandb\run-20230412_210614-3rqvnkaq\files\wandb-summary.json wandb-summary.json
+2023-04-12 21:06:28,717 INFO    SenderThread:21360 [dir_watcher.py:finish():323] scan save: C:\Users\joanpg5\Documents\aidl-2023-winter-mlops\wandb\run-20230412_210614-3rqvnkaq\files\media\graph\graph_0_summary_bfa73b98070a00a1d77c.graph.json media\graph\graph_0_summary_bfa73b98070a00a1d77c.graph.json
+2023-04-12 21:06:28,717 INFO    SenderThread:21360 [sender.py:transition_state():389] send defer: 7
+2023-04-12 21:06:28,717 DEBUG   SenderThread:21360 [sender.py:send_request():246] send_request: poll_exit
+2023-04-12 21:06:28,718 DEBUG   HandlerThread:21360 [handler.py:handle_request():141] handle_request: defer
+2023-04-12 21:06:28,718 INFO    HandlerThread:21360 [handler.py:handle_request_defer():164] handle defer: 7
+2023-04-12 21:06:28,718 DEBUG   SenderThread:21360 [sender.py:send_request():246] send_request: defer
+2023-04-12 21:06:28,718 INFO    SenderThread:21360 [sender.py:send_request_defer():385] handle sender defer: 7
+2023-04-12 21:06:28,718 INFO    SenderThread:21360 [file_pusher.py:finish():145] shutting down file pusher
+2023-04-12 21:06:28,821 DEBUG   HandlerThread:21360 [handler.py:handle_request():141] handle_request: poll_exit
+2023-04-12 21:06:28,821 DEBUG   SenderThread:21360 [sender.py:send_request():246] send_request: poll_exit
+2023-04-12 21:06:28,930 DEBUG   HandlerThread:21360 [handler.py:handle_request():141] handle_request: poll_exit
+2023-04-12 21:06:28,930 DEBUG   SenderThread:21360 [sender.py:send_request():246] send_request: poll_exit
+2023-04-12 21:06:29,038 DEBUG   HandlerThread:21360 [handler.py:handle_request():141] handle_request: poll_exit
+2023-04-12 21:06:29,038 DEBUG   SenderThread:21360 [sender.py:send_request():246] send_request: poll_exit
+2023-04-12 21:06:29,146 DEBUG   HandlerThread:21360 [handler.py:handle_request():141] handle_request: poll_exit
+2023-04-12 21:06:29,146 DEBUG   SenderThread:21360 [sender.py:send_request():246] send_request: poll_exit
+2023-04-12 21:06:29,255 DEBUG   HandlerThread:21360 [handler.py:handle_request():141] handle_request: poll_exit
+2023-04-12 21:06:29,255 DEBUG   SenderThread:21360 [sender.py:send_request():246] send_request: poll_exit
+2023-04-12 21:06:29,262 INFO    Thread-23 :21360 [upload_job.py:push():137] Uploaded file C:\Users\joanpg5\Documents\aidl-2023-winter-mlops\wandb\run-20230412_210614-3rqvnkaq\files\wandb-summary.json
+2023-04-12 21:06:29,269 INFO    Thread-19 :21360 [upload_job.py:push():137] Uploaded file C:\Users\joanpg5\Documents\aidl-2023-winter-mlops\wandb\run-20230412_210614-3rqvnkaq\files\conda-environment.yaml
+2023-04-12 21:06:29,287 INFO    Thread-20 :21360 [upload_job.py:push():137] Uploaded file C:\Users\joanpg5\Documents\aidl-2023-winter-mlops\wandb\run-20230412_210614-3rqvnkaq\files\config.yaml
+2023-04-12 21:06:29,295 INFO    Thread-21 :21360 [upload_job.py:push():137] Uploaded file C:\Users\joanpg5\Documents\aidl-2023-winter-mlops\wandb\run-20230412_210614-3rqvnkaq\files\output.log
+2023-04-12 21:06:29,300 INFO    Thread-22 :21360 [upload_job.py:push():137] Uploaded file C:\Users\joanpg5\Documents\aidl-2023-winter-mlops\wandb\run-20230412_210614-3rqvnkaq\files\requirements.txt
+2023-04-12 21:06:29,364 DEBUG   HandlerThread:21360 [handler.py:handle_request():141] handle_request: poll_exit
+2023-04-12 21:06:29,364 DEBUG   SenderThread:21360 [sender.py:send_request():246] send_request: poll_exit
+2023-04-12 21:06:29,474 DEBUG   HandlerThread:21360 [handler.py:handle_request():141] handle_request: poll_exit
+2023-04-12 21:06:29,474 DEBUG   SenderThread:21360 [sender.py:send_request():246] send_request: poll_exit
+2023-04-12 21:06:29,503 INFO    Thread-10 :21360 [sender.py:transition_state():389] send defer: 8
+2023-04-12 21:06:29,504 DEBUG   HandlerThread:21360 [handler.py:handle_request():141] handle_request: defer
+2023-04-12 21:06:29,505 INFO    HandlerThread:21360 [handler.py:handle_request_defer():164] handle defer: 8
+2023-04-12 21:06:29,505 DEBUG   SenderThread:21360 [sender.py:send_request():246] send_request: defer
+2023-04-12 21:06:29,506 INFO    SenderThread:21360 [sender.py:send_request_defer():385] handle sender defer: 8
+2023-04-12 21:06:29,582 DEBUG   HandlerThread:21360 [handler.py:handle_request():141] handle_request: poll_exit
+2023-04-12 21:06:30,030 INFO    SenderThread:21360 [sender.py:transition_state():389] send defer: 9
+2023-04-12 21:06:30,030 DEBUG   SenderThread:21360 [sender.py:send_request():246] send_request: poll_exit
+2023-04-12 21:06:30,032 DEBUG   HandlerThread:21360 [handler.py:handle_request():141] handle_request: defer
+2023-04-12 21:06:30,032 INFO    HandlerThread:21360 [handler.py:handle_request_defer():164] handle defer: 9
+2023-04-12 21:06:30,033 DEBUG   SenderThread:21360 [sender.py:send_request():246] send_request: defer
+2023-04-12 21:06:30,033 INFO    SenderThread:21360 [sender.py:send_request_defer():385] handle sender defer: 9
+2023-04-12 21:06:30,034 INFO    SenderThread:21360 [sender.py:transition_state():389] send defer: 10
+2023-04-12 21:06:30,035 DEBUG   SenderThread:21360 [sender.py:send():232] send: final
+2023-04-12 21:06:30,036 DEBUG   SenderThread:21360 [sender.py:send():232] send: footer
+2023-04-12 21:06:30,037 DEBUG   HandlerThread:21360 [handler.py:handle_request():141] handle_request: defer
+2023-04-12 21:06:30,037 INFO    HandlerThread:21360 [handler.py:handle_request_defer():164] handle defer: 10
+2023-04-12 21:06:30,038 DEBUG   SenderThread:21360 [sender.py:send_request():246] send_request: defer
+2023-04-12 21:06:30,038 INFO    SenderThread:21360 [sender.py:send_request_defer():385] handle sender defer: 10
+2023-04-12 21:06:30,139 DEBUG   HandlerThread:21360 [handler.py:handle_request():141] handle_request: poll_exit
+2023-04-12 21:06:30,139 DEBUG   SenderThread:21360 [sender.py:send_request():246] send_request: poll_exit
+2023-04-12 21:06:30,140 INFO    SenderThread:21360 [file_pusher.py:join():150] waiting for file pusher
+2023-04-12 21:06:30,623 DEBUG   HandlerThread:21360 [handler.py:handle_request():141] handle_request: sampled_history
+2023-04-12 21:06:30,626 DEBUG   HandlerThread:21360 [handler.py:handle_request():141] handle_request: get_summary
+2023-04-12 21:06:30,628 DEBUG   HandlerThread:21360 [handler.py:handle_request():141] handle_request: shutdown
+2023-04-12 21:06:30,628 INFO    HandlerThread:21360 [handler.py:finish():806] shutting down handler
+2023-04-12 21:06:31,044 INFO    WriterThread:21360 [datastore.py:close():279] close: C:\Users\joanpg5\Documents\aidl-2023-winter-mlops\wandb\run-20230412_210614-3rqvnkaq\run-3rqvnkaq.wandb
+2023-04-12 21:06:31,526 INFO    SenderThread:21360 [sender.py:finish():1106] shutting down sender
+2023-04-12 21:06:31,526 INFO    SenderThread:21360 [file_pusher.py:finish():145] shutting down file pusher
+2023-04-12 21:06:31,526 INFO    SenderThread:21360 [file_pusher.py:join():150] waiting for file pusher
+2023-04-12 21:06:31,531 INFO    MainThread:21360 [internal.py:handle_exit():80] Internal process exited

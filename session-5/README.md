@@ -22,14 +22,14 @@ pip install -r requirements.txt
 
 To run the project, run
 ```
-python session-5/main.py --task reconstruction --log_framework tensorboard
-python session-5/main.py --task reconstruction --log_framework wandb
-python session-5/main.py --task classification --log_framework tensorboard
-python session-5/main.py --task classification --log_framework wandb
+python main.py --task reconstruction --log_framework tensorboard
+python main.py --task reconstruction --log_framework wandb
+python main.py --task classification --log_framework tensorboard
+python main.py --task classification --log_framework wandb
 ```
 To run the project with different arguments, run
 ```
-python session-5/main.py --task reconstruction --log_framework tensorboard --latent_dims 64 --n_epochs 10
+python main.py --task reconstruction --log_framework tensorboard --latent_dims 64 --n_epochs 10
 ```
 
 ## TODO

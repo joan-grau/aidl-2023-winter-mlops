@@ -1,0 +1,10 @@
+
+[34m[1mwandb[39m[22m: logging graph, to disable use `wandb.watch(log_graph=False)`
+Traceback (most recent call last):
+  File "session-5/main.py", line 75, in <module>
+    run_reconstruction(
+  File "C:\Users\joanpg5\Documents\aidl-2023-winter-mlops\session-5\run_reconstruction.py", line 94, in run_reconstruction
+    logger.log_reconstruction_training(
+  File "C:\Users\joanpg5\Documents\aidl-2023-winter-mlops\session-5\wandb_TODO.py", line 51, in log_reconstruction_training
+    wandb.log({wandb.Image(reconstruction_grid)})
+TypeError: unhashable type: 'Image'

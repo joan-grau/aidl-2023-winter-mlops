@@ -1,0 +1,7 @@
+
+Epoch [0 / 5] average reconstruction error: 0.6711925715208054
+Epoch [1 / 5] average reconstruction error: 0.4451725482940674
+Epoch [2 / 5] average reconstruction error: 0.3889166198670864
+Epoch [3 / 5] average reconstruction error: 0.36702710539102557
+Epoch [4 / 5] average reconstruction error: 0.3561758533120155
+Training took 18.37 seconds
