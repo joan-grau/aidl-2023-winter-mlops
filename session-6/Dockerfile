@@ -1,17 +1,17 @@
 # set base image (host OS)
-FROM ...
+FROM python:3.7-slim-buster
 
 # set the working directory in the container
-WORKDIR ...
+WORKDIR /src
 
 # copy the dependencies file to the working directory
-COPY ...
+COPY requirements.txt .
 
 # install dependencies
-RUN ...
+RUN pip install --quiet -r requirements.txt
 
 # Copy code to the working directory
-COPY ...
+COPY /src .
 
 # command to run on container start
-ENTRYPOINT ...
+ENTRYPOINT ["python", "entrypoint.py"]
